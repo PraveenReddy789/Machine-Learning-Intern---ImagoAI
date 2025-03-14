@@ -1,0 +1,6 @@
+# Required libraries to install
+numpy
+pandas
+matplotlib
+scikit-learn
+xgboost
