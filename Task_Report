@@ -1,0 +1,59 @@
+# Project Report: Hyperspectral Imaging for Mycotoxin Prediction
+
+## 1. Introduction
+Mycotoxins, such as DON (vomitoxin), are harmful contaminants in corn and need accurate detection. This project leverages hyperspectral imaging data to predict DON concentration using machine learning techniques, including dimensionality reduction and regression modeling.
+
+## 2. Data Preprocessing
+### a. Data Cleaning
+- Loaded the dataset from `TASK-ML-INTERN.csv`.
+- Dropped the identifier column (`hsi_id`).
+- Checked for missing values and inconsistencies.
+
+### b. Normalization
+- Applied **StandardScaler** to normalize spectral reflectance values for better model performance.
+
+### c. Visualization
+- **Mean Reflectance Plot**: Displayed spectral reflectance across different wavelength bands.
+- **Heatmaps & PCA Scatter Plots**: Explored data distributions and variance.
+
+## 3. Dimensionality Reduction
+- Implemented **Principal Component Analysis (PCA)** to reduce dimensionality.
+- **Top 10 components retained**, explaining most variance.
+- Visualized PCA results using 2D scatter plots.
+
+## 4. Model Training
+### a. Model Selection
+- Chose **XGBoost Regression** due to its efficiency in handling complex data.
+- Tuned hyperparameters:
+  - **Estimators:** 200
+  - **Learning Rate:** 0.05
+  - **Max Depth:** 6
+
+### b. Training & Splitting
+- Split the dataset into **80% training** and **20% testing**.
+- Trained the model on PCA-reduced features.
+
+## 5. Model Evaluation
+### a. Metrics
+- **Mean Absolute Error (MAE):** 1493.99
+- **Root Mean Squared Error (RMSE):** 2825.67
+- **R² Score:** 0.97 (high accuracy)
+
+### b. Visualizations
+- Scatter plot of **actual vs. predicted DON concentrations** to assess model performance.
+
+## 6. Key Findings & Future Improvements
+### a. Observations
+- PCA effectively reduced data dimensionality while preserving variance.
+- XGBoost outperformed simpler models, achieving high predictive accuracy.
+
+## 7. Conclusion
+This project successfully demonstrated the potential of **hyperspectral imaging and machine learning** in predicting mycotoxin levels. Future work can focus on real-time analysis and deployment.
+
+---
+
+### References
+- XGBoost Documentation
+- Scikit-Learn PCA Guide
+- Hyperspectral Imaging Research Papers
+
